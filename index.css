@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark futuristic theme with neon accents */
+    --background: 240 10% 4%;
+    --foreground: 195 100% 95%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 195 100% 95%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 195 100% 95%;
+
+    /* Neon cyan primary */
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    /* Electric blue secondary */
+    --secondary: 215 100% 50%;
+    --secondary-foreground: 195 100% 95%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 195 20% 65%;
+
+    /* Cyan accent with glow */
+    --accent: 185 100% 55%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom neon colors */
+    --neon-cyan: 190 100% 50%;
+    --neon-blue: 215 100% 50%;
+    --deep-black: 240 10% 4%;
+    --glass-bg: 240 10% 12%;
+    
+    /* Glow effects */
+    --glow-cyan: 0 0 20px hsl(190 100% 50% / 0.5);
+    --glow-blue: 0 0 20px hsl(215 100% 50% / 0.5);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%), hsl(215 100% 10%), hsl(190 100% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(240 8% 8% / 0.6), hsl(240 8% 12% / 0.4));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+  }
+
+  .neon-glow {
+    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.8),
+                 0 0 20px hsl(var(--neon-cyan) / 0.6),
+                 0 0 30px hsl(var(--neon-cyan) / 0.4);
+  }
+
+  .glass-effect {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-bg) / 0.7),
+      hsl(var(--glass-bg) / 0.3)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
